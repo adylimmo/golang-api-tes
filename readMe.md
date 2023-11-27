@@ -1,3 +1,8 @@
+# URL
+
+
+https://golang-api-tes-production.up.railway.app/api/auth/register
+
 # Build Golang RESTful API with Gorm, Gin and Postgres
 
 ## 1. How to Setup Golang GORM RESTful API Project with Postgres
