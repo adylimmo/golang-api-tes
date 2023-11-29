@@ -94,6 +94,19 @@ func (pc *PostController) FindPostById(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"status": "success", "data": post})
 }
 
+func (pc *PostController) FindPostByuserId(ctx *gin.Context) {
+	postId := ctx.Param("userId")
+
+	var post models.Post
+	result := pc.DB.First(&post, "user = ?", userId)
+	if result.Error != nil {
+		ctx.JSON(http.StatusNotFound, gin.H{"status": "fail", "message": "No post with that title exists"})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{"status": "success", "data": post})
+}
+
 func (pc *PostController) FindPosts(ctx *gin.Context) {
 	var page = ctx.DefaultQuery("page", "1")
 	var limit = ctx.DefaultQuery("limit", "10")
