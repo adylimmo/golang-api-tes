@@ -81,11 +81,11 @@ func (pc *PostController) UpdatePost(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"status": "success", "data": updatedPost})
 }
 
-func (pc *PostController) FindPostById(ctx *gin.Context) {
-	postId := ctx.Param("postId")
+func (pc *PostController) FindPostsById(ctx *gin.Context) {
+	postsId := ctx.Param("posstId")
 
 	var post models.Post
-	result := pc.DB.First(&post, "id = ?", postId)
+	result := pc.DB.First(&post, "id = ?", postsId)
 	if result.Error != nil {
 		ctx.JSON(http.StatusNotFound, gin.H{"status": "fail", "message": "No post with that title exists"})
 		return
