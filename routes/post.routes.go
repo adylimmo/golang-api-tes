@@ -22,5 +22,6 @@ func (pc *PostRouteController) PostRoute(rg *gin.RouterGroup) {
 	router.GET("/", pc.postController.FindPosts)
 	router.PUT("/:postId", pc.postController.UpdatePost)
 	router.GET("/:postsId", pc.postController.FindPostsById)
+	router.GET("/:postsUserId", pc.postController.FindPostsByuserId)
 	router.DELETE("/:postId", pc.postController.DeletePost)
 }
