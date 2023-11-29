@@ -58,7 +58,8 @@ func main() {
 	router := server.Group("/api")
 	router.GET("/healthchecker", func(ctx *gin.Context) {
 		message := "Welcome to Golang with Gorm and Postgres"
-		ctx.JSON(http.StatusOK, gin.H{"status": "success", "message": message})
+		user := "Welcome to Golang with Gorm and Postgres"
+		ctx.JSON(http.StatusOK, gin.H{"status": "success", "message": message, "user"; user})
 	})
 
 	AuthRouteController.AuthRoute(router)
