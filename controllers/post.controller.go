@@ -95,10 +95,10 @@ func (pc *PostController) FindPostsById(ctx *gin.Context) {
 }
 
 func (pc *PostController) FindPostsByuserId(ctx *gin.Context) {
-	userId := ctx.Param("postsUserId")
+	postsUserId := ctx.Param("postsUserId")
 
 	var users models.Post
-	result := pc.DB.First(&users, "user = ?", userId)
+	result := pc.DB.First(&users, "user = ?", postsUserId)
 	if result.Error != nil {
 		ctx.JSON(http.StatusNotFound, gin.H{"status": "fail", "message": "No post with that title exists"})
 		return
