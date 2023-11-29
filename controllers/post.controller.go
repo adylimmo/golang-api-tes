@@ -95,7 +95,7 @@ func (pc *PostController) FindPostById(ctx *gin.Context) {
 }
 
 func (pc *PostController) FindPostByuserId(ctx *gin.Context) {
-	postId := ctx.Param("userId")
+	userId := ctx.Param("userId")
 
 	var post models.Post
 	result := pc.DB.First(&post, "user = ?", userId)
