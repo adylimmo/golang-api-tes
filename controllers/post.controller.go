@@ -94,7 +94,7 @@ func (pc *PostController) FindPostsById(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"status": "success", "data": post})
 }
 
-func (pc *PostController) FindByuserId(ctx *gin.Context) {
+func (pc *PostController) FindPostsByuserId(ctx *gin.Context) {
 	userId := ctx.Param("userId")
 
 	var users models.Post
